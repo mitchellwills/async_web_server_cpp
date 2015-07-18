@@ -32,6 +32,7 @@ public:
 
   bool sendTextMessage(const std::string& content);
   bool sendPingMessage(const std::string& content = "");
+  bool sendPongMessage(const std::string& content);
 
   bool sendMessage(const WebsocketMessage& message);
   bool sendFrame(WebsocketFrame& frame);

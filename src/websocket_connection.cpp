@@ -29,6 +29,13 @@ bool WebsocketConnection::sendPingMessage(const std::string& content)
   return sendMessage(m);
 }
 
+bool WebsocketConnection::sendPongMessage(const std::string& content)
+{
+  async_web_server_cpp::WebsocketMessage m;
+  m.type = async_web_server_cpp::WebsocketMessage::type_pong;
+  m.content = content;
+  return sendMessage(m);
+}
 
 bool WebsocketConnection::sendMessage(const WebsocketMessage& message)
 {
